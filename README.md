@@ -109,13 +109,12 @@ test_loader = DataLoader(test_dataset, batch_size=16)
 
 # Define Neural Network(Model1)
 class PeopleClassifier(nn.Module):
-    def __init__(self, input_size): # Changed init to__init__
+    def __init__(self, input_size): 
         super(PeopleClassifier, self).__init__()
         self.fc1 = nn.Linear(input_size, 32)
         self.fc2 = nn.Linear(32,16)
         self.fc3 = nn.Linear(16,8)
-        self.fc4 = nn.Linear(8,4) # Changed fc3 to fc4 to avoid overwriting
-
+        self.fc4 = nn.Linear(8,4) 
 
     def forward(self, x):
         x = F.relu(self.fc1(x))
@@ -160,8 +159,8 @@ with torch.no_grad():
 accuracy = accuracy_score(actuals, predictions)
 conf_matrix = confusion_matrix(actuals, predictions)
 class_report = classification_report(actuals, predictions, target_names=[str(i) for i in label_encoder.classes_])
-print("Name:SURYANARAYANAN T")
-print("Register No:212224040341")
+print("Name: Syed Mohamed Raihan M")
+print("Register No:212224240167")
 print(f'Test Accuracy: {accuracy:.2f}%')
 print("Confusion Matrix:\n", conf_matrix)
 print("Classification Report:\n", class_report)
@@ -181,8 +180,8 @@ with torch.no_grad():
     # Select the prediction for the sample (first element)
     predicted_class_index = torch.argmax(output[0]).item()
     predicted_class_label = label_encoder.inverse_transform([predicted_class_index])[0]
-print("Name:SURYANARAYANAN T")
-print("Register No:212224040341")
+print("Name: Syed Mohamed Raihan M")
+print("Register No:212224240167")
 print(f'Predicted class for sample input: {predicted_class_label}')
 print(f'Actual class for sample input: {label_encoder.inverse_transform([y_test[12].item()])[0]}')
 ```
